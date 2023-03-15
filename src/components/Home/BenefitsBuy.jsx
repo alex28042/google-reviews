@@ -41,12 +41,12 @@ function BenefitsBuy() {
   ];
 
   return (
-    <div className="flex flex-col ml-10 w-[400px] items-center justify-center">
-      <h1 className="text-lg font-bold">Benefits of buying Google reviews</h1>
+    <div className="flex flex-col ml-10 w-[650px] items-center justify-center">
+      <h1 className="text-2xl font-bold mb-10">Benefits of buying Google reviews</h1>
       <div>
         {features.map((feature, i) => (
           <>
-            <div className="flex flex-row">
+            <div className="flex flex-row items-center">
               <AiOutlineCheck color="green" height={15} width={15} style={{marginRight: 10}} />
               <p key={feature.id}>{feature.text}</p>
             </div>

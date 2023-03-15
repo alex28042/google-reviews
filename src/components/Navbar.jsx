@@ -9,7 +9,6 @@ export default function Header() {
 
   return (
     <header class="fixed top-0 w-full clearNav z-50">
-        
       <div class="max-w-5xl mx-auto flex flex-wrap p-5 flex-col md:flex-row">
         <div className="flex flex-row items-center justify-between p-3 md:p-1">
           <a
@@ -51,20 +50,9 @@ export default function Header() {
           <div class="md:ml-auto md:mr-auto font-4 pt-1 md:pl-14 pl-1 flex flex-wrap items-center md:text-base text-1xl md:justify-center justify-items-start">
             <Link to="A" smooth={true} duration={1000}>
               <a class="mr-5  cursor-pointer text-gray-400 transition duration-500 ease-in-out hover:text-black font-semibold tr04">
-                Cómo funcionamos
+                Services
               </a>
             </Link>  
-            <Link to="B" smooth={true} duration={1000}>
-              <a class="mr-5 cursor-pointer text-gray-400 transition duration-500 ease-in-out hover:text-black font-semibold tr04">
-                FAQ
-              </a>
-            </Link>
-            <Link to="C" smooth={true} duration={1000}>
-              <a class="mr-5  ml-0 cursor-pointer transition duration-500 ease-in-out text-gray-400 hover:text-black font-semibold tr04">
-                Contáctanos
-              </a>
-            </Link>
-          
           </div>
           <a
             href="https://instagram.com/onlygrowthfans"
