@@ -4,10 +4,17 @@ import { AiOutlineSearch } from "react-icons/ai";
 import reviewsData from "../../data/data"
 
 const Selector = () => {
-  const [countries, setCountries] = useState(reviewsData);
+  const [countries, setCountries] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [selected, setSelected] = useState("");
   const [open, setOpen] = useState(false);
+
+  console.log(reviewsData);
+
+  useEffect(() => {
+    setCountries(reviewsData)
+  }, [])
+
   return (
     <div className="w-72 font-medium h-80">
       <div
@@ -38,28 +45,28 @@ const Selector = () => {
             className="placeholder:text-gray-700 p-2 outline-none"
           />
         </div>
-        {countries?.map((country) => (
+        {countries.map((item) => (
           <li
-            key={country?.name}
+            key={item?.title}
             className={`p-2 text-sm hover:bg-sky-600 hover:text-white
             ${
-              country?.name?.toLowerCase() === selected?.toLowerCase() &&
+              item?.title?.toLowerCase() === selected?.toLowerCase() &&
               "bg-sky-600 text-white"
             }
             ${
-              country?.name?.toLowerCase().startsWith(inputValue)
+              item?.title?.toLowerCase().startsWith(inputValue)
                 ? "block"
                 : "hidden"
             }`}
             onClick={() => {
-              if (country?.name?.toLowerCase() !== selected.toLowerCase()) {
-                setSelected(country?.name);
+              if (item?.title?.toLowerCase() !== selected.toLowerCase()) {
+                setSelected(item?.title);
                 setOpen(false);
                 setInputValue("");
               }
             }}
           >
-            {country?.name}
+            {item?.title}
           </li>
         ))}
       </ul>

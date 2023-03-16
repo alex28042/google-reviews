@@ -34,6 +34,7 @@ function Home() {
 
     console.log(error);
   };
+
   return (
     <div>
       <h1 className="font-bold text-4xl text-center mb-32">
