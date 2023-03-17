@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { BiChevronDown } from "react-icons/bi";
 import { AiOutlineSearch } from "react-icons/ai";
-import reviewsData from "../../data/data"
 
 const Selector = () => {
   const [countries, setCountries] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [selected, setSelected] = useState("");
   const [open, setOpen] = useState(false);
+  const reviewsData = [
+    { id: 1, title: "1 Google Review 5 stars" },
+    { id: 2, title: "5 Google Review 5 stars" },
+    { id: 3, title: "10 Google Review 5 stars" },
+    { id: 4, title: "15 Google Review 5 stars" },
+    { id: 5, title: "20 Google Review 5 stars" },
+  ];
 
-  console.log(reviewsData);
+  console.log(selected);
 
   useEffect(() => {
     setCountries(reviewsData)
@@ -27,7 +33,7 @@ const Selector = () => {
           ? selected?.length > 25
             ? selected?.substring(0, 25) + "..."
             : selected
-          : "Select Country"}
+          : "Select Google Review"}
         <BiChevronDown size={20} className={`${open && "rotate-180"}`} />
       </div>
       <ul
@@ -35,16 +41,6 @@ const Selector = () => {
           open ? "max-h-60" : "max-h-0"
         } `}
       >
-        <div className="flex items-center px-2 sticky top-0 bg-white">
-          <AiOutlineSearch size={18} className="text-gray-700" />
-          <input
-            type="text"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value.toLowerCase())}
-            placeholder="Enter country name"
-            className="placeholder:text-gray-700 p-2 outline-none"
-          />
-        </div>
         {countries.map((item) => (
           <li
             key={item?.title}
