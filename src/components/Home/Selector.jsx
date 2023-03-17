@@ -25,7 +25,7 @@ const Selector = () => {
     <div className="w-72 font-medium h-80">
       <div
         onClick={() => setOpen(!open)}
-        className={`bg-white w-full p-2 flex items-center justify-between rounded ${
+        className={`bg-slate-200 w-full p-2 flex items-center justify-between rounded-xl ${
           !selected && "text-gray-700"
         }`}
       >
@@ -37,7 +37,7 @@ const Selector = () => {
         <BiChevronDown size={20} className={`${open && "rotate-180"}`} />
       </div>
       <ul
-        className={`bg-white mt-2 overflow-y-auto ${
+        className={`bg-slate-200 rounded-xl mt-2 overflow-y-auto ${
           open ? "max-h-60" : "max-h-0"
         } `}
       >
