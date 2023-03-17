@@ -4,6 +4,13 @@ import { loadStripe } from "@stripe/stripe-js";
 
 let stripePromise;
 
+const infoBuy = [
+  "Guaranteed Delivery",
+  "High Quality Google",
+  "100% Safe & Private",
+  "24/7 Support",
+];
+
 const items = [
   {
     price: "price_1Mm45pKEbbYpdkJ1io1yZ5tT",
@@ -37,7 +44,9 @@ const getStripe = () => {
 
 function BuyBox() {
   const [loading, setLoading] = useState(false);
-  const item = items[4];
+  const [selcectedItem, setSelcectedItem] = useState(0);
+
+  const item = items[selcectedItem - 1];
 
   const checkoutOptions = {
     lineItems: [item],
@@ -59,11 +68,17 @@ function BuyBox() {
 
   return (
     <div className="h-[500px] w-[380px] border-2 bg-white rounded-lg shadow-md flex flex-col items-center justify-center relative">
-      <Selector />
+      <Selector selectedItem={setSelcectedItem} />
+      <div className="w-full ml-24">
+        {infoBuy.map((item, i) => (
+          <p className="mb-5 text-start">{item}</p>
+        ))}
+      </div>
+      <p className="bottom-16 font-bold absolute">25% OFF NOW</p>
       <button
         disabled={loading}
         onClick={redirectToCheckout}
-        className="absolute w-2/3 h-[30px] bg-green-100 bottom-4 rounded-lg"
+        className="absolute w-3/4 h-[45px] bg-purple-400 bottom-4 rounded-lg"
       >
         <p>Buy now!</p>
       </button>
