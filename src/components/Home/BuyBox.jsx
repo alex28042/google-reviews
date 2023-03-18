@@ -101,13 +101,7 @@ function BuyBox() {
         onClick={redirectToCheckout}
         className="absolute w-3/4 h-[45px] bg-purple-400 bottom-4 rounded-lg"
       >
-        {loading ? (
-          <div className="w-full items-center flex h-full">
-            <Ring size={20} lineWeight={5} speed={2} color="white" />
-          </div>
-        ) : (
-          <p>Buy now!</p>
-        )}
+        <p>Buy now!</p>
       </button>
     </div>
   );
