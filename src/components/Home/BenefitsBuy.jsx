@@ -42,7 +42,7 @@ function BenefitsBuy() {
 
   return (
     <div className="flex flex-col ml-10 w-[650px] items-center justify-center">
-      <h1 className="text-2xl font-bold mb-10">Benefits of buying Google reviews</h1>
+      <h1 className="text-3xl font-bold mb-10">Benefits of buying Google reviews</h1>
       <div>
         {features.map((feature, i) => (
           <>

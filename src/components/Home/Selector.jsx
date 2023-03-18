@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BiChevronDown } from "react-icons/bi";
 import { AiOutlineSearch } from "react-icons/ai";
 
-const Selector = ({selectedItem}) => {
+const Selector = ({ selectedItem }) => {
   const [countries, setCountries] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [selected, setSelected] = useState("");
@@ -17,8 +17,8 @@ const Selector = ({selectedItem}) => {
 
   useEffect(() => {
     setCountries(reviewsData);
-    setSelected(reviewsData[0].title)
-    selectedItem(reviewsData[0].id)
+    setSelected(reviewsData[0].title);
+    selectedItem(reviewsData[0].id);
   }, []);
 
   return (
@@ -49,7 +49,8 @@ const Selector = ({selectedItem}) => {
         {countries.map((item) => (
           <li
             key={item?.title}
-            className={`p-2 text-sm hover:bg-purple-400 hover:text-white
+            className={`p-2 text-sm transition duration-300 ease-in-out
+            hover:bg-purple-400 hover:text-white hover:shadow-md
             ${
               item?.title?.toLowerCase() === selected?.toLowerCase() &&
               "bg-purple-400 text-white"
@@ -62,7 +63,7 @@ const Selector = ({selectedItem}) => {
             onClick={() => {
               if (item?.title?.toLowerCase() !== selected.toLowerCase()) {
                 setSelected(item?.title);
-                selectedItem(item?.id)
+                selectedItem(item?.id);
                 setOpen(false);
                 setInputValue("");
               }

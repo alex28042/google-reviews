@@ -1,14 +1,31 @@
 import React, { useState } from "react";
 import Selector from "./Selector";
 import { loadStripe } from "@stripe/stripe-js";
+import { FiLock } from "react-icons/fi";
+import { FiUser } from "react-icons/fi";
+import { FiThumbsUp } from "react-icons/fi";
+import { FiShield } from "react-icons/fi";
+import { Ring } from "@uiball/loaders";
 
 let stripePromise;
 
 const infoBuy = [
-  "Guaranteed Delivery",
-  "High Quality Google",
-  "100% Safe & Private",
-  "24/7 Support",
+  {
+    name: "Guaranteed Delivery",
+    component: <FiShield size={20} color={"#A020F0"} />,
+  },
+  {
+    name: "High Quality Google",
+    component: <FiThumbsUp size={20} color={"#A020F0"} />,
+  },
+  {
+    name: "100% Safe & Private",
+    component: <FiUser size={20} color={"#A020F0"} />,
+  },
+  {
+    name: "24/7 Support",
+    component: <FiLock size={20} color={"#A020F0"} />,
+  },
 ];
 
 const items = [
@@ -71,16 +88,26 @@ function BuyBox() {
       <Selector selectedItem={setSelcectedItem} />
       <div className="w-full ml-24">
         {infoBuy.map((item, i) => (
-          <p className="mb-5 text-start">{item}</p>
+          <div className="flex flex-row mb-5 items-center">
+            {item.component}
+            <p className=" ml-3">{item.name}</p>
+          </div>
         ))}
       </div>
       <p className="bottom-16 font-bold absolute">25% OFF NOW</p>
+
       <button
         disabled={loading}
         onClick={redirectToCheckout}
         className="absolute w-3/4 h-[45px] bg-purple-400 bottom-4 rounded-lg"
       >
-        <p>Buy now!</p>
+        {loading ? (
+          <div className="w-full items-center flex h-full">
+            <Ring size={20} lineWeight={5} speed={2} color="white" />
+          </div>
+        ) : (
+          <p>Buy now!</p>
+        )}
       </button>
     </div>
   );
