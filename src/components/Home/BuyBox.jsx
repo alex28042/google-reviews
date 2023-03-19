@@ -5,7 +5,7 @@ import { FiLock } from "react-icons/fi";
 import { FiUser } from "react-icons/fi";
 import { FiThumbsUp } from "react-icons/fi";
 import { FiShield } from "react-icons/fi";
-import { Ring } from "@uiball/loaders";
+import { db } from "../../firebaseconfig";
 
 let stripePromise;
 
@@ -88,7 +88,6 @@ function BuyBox() {
   };
 
   const redirectToCheckout = async () => {
-    setLoading(true);
     console.log("redirect");
 
     const stripe = await getStripe();
@@ -113,7 +112,20 @@ function BuyBox() {
 
       <button
         disabled={loading}
-        onClick={redirectToCheckout}
+        onClick={async () => {
+          setLoading(true);
+
+          await db()
+            .collection("Users")
+            .add({
+              email: "xxxxx",
+              companyURL: "xxxxx",
+            })
+            .then(() => console.log("holaa"))
+            .catch(() => console.log("xxx"));
+
+          redirectToCheckout();
+        }}
         onMouseEnter={handleHover}
         onMouseLeave={handleMouseLeave}
         className={`absolute border w-3/4 h-[45px] bottom-4 rounded-lg overflow-hidden ${
