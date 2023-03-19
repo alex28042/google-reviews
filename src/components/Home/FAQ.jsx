@@ -31,9 +31,15 @@ function FAQ() {
     <div className="flex flex-col items-center justify-center w-[1000px]">
       {faq.map((item, i) => (
         <>
-          <div className="h-[200px] border w-full mb-6 rounded-2xl border-purple-400">
-            <h1 className="font-bold text-xl text-center m-3">{item.title}</h1>
-            <p className="m-4">{item.desc}</p>
+          <div className="h-[200px] border relative w-full mb-6 rounded-2xl border-purple-400">
+            <div className="rounded-t-2xl w-full absolute h-[60px] bg-purple-400">
+              <h1 className="font-bold text-xl text-center m-3">
+                {item.title}
+              </h1>
+            </div>
+            <div>
+              <p className="m-4 mt-[66px]">{item.desc}</p>
+            </div>
           </div>
         </>
       ))}

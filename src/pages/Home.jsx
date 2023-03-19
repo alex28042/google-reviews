@@ -4,6 +4,7 @@ import BuyBox from "../components/Home/BuyBox";
 import { loadStripe } from "@stripe/stripe-js";
 import Characteristics from "../components/Home/Characteristics";
 import FAQ from "../components/Home/FAQ";
+import Footer from "../components/Home/Footer";
 
 function Home() {
   return (
@@ -24,6 +25,7 @@ function Home() {
       </div>
       <Characteristics />
       <FAQ />
+      <Footer />
     </div>
   );
 }

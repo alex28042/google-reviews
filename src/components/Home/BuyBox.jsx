@@ -60,6 +60,21 @@ const getStripe = () => {
 };
 
 function BuyBox() {
+  const [hovered, setHovered] = useState(false);
+  const [clicked, setClicked] = useState(false);
+
+  const handleHover = () => {
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
+
+  const handleClick = () => {
+    setClicked(true);
+  };
+
   const [loading, setLoading] = useState(false);
   const [selcectedItem, setSelcectedItem] = useState(0);
 
@@ -99,9 +114,24 @@ function BuyBox() {
       <button
         disabled={loading}
         onClick={redirectToCheckout}
-        className="absolute w-3/4 h-[45px] bg-purple-400 bottom-4 rounded-lg"
+        onMouseEnter={handleHover}
+        onMouseLeave={handleMouseLeave}
+        className={`absolute border w-3/4 h-[45px] bottom-4 rounded-lg overflow-hidden ${
+          clicked ? "border-purple-600" : ""
+        }`}
+        style={{
+          background: `linear-gradient(to bottom right, ${
+            hovered ? "#6b46c1, #805ad5" : "#9f7aea, #7158e2"
+          })`,
+          transform: `scale(${hovered ? 1.05 : 1})`,
+          transition: "transform 0.3s, background 0.3s",
+          transitionTimingFunction: "ease-in-out",
+          transitionDuration: "300ms",
+        }}
       >
-        <p>Buy now!</p>
+        <p className="absolute inset-0 flex items-center justify-center font-bold text-white">
+          {loading ? "Loading..." : "Buy now!"}
+        </p>
       </button>
     </div>
   );
