@@ -48,7 +48,9 @@ function Checkout() {
   const { id } = useParams();
 
   useLayoutEffect(() => {
-    if (id <= items.length && id >= 0) setSelcectedItem(id);
+    if (id <= items.length && id >= 1) {
+      setSelcectedItem(id);
+    } 
   }, []);
 
   const handleHover = () => {
