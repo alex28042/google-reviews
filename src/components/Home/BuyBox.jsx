@@ -6,6 +6,7 @@ import { FiUser } from "react-icons/fi";
 import { FiThumbsUp } from "react-icons/fi";
 import { FiShield } from "react-icons/fi";
 import { db } from "../../firebaseconfig";
+import { Link } from "react-router-dom";
 
 let stripePromise;
 
@@ -110,22 +111,9 @@ function BuyBox() {
       </div>
       <p className="bottom-16 font-bold absolute">25% OFF NOW</p>
 
-      <button
+      <Link 
+        to={`/checkout/${selcectedItem}`}
         disabled={loading}
-        onClick={async () => {
-          setLoading(true);
-
-          await db()
-            .collection("Users")
-            .add({
-              email: "xxxxx",
-              companyURL: "xxxxx",
-            })
-            .then(() => console.log("holaa"))
-            .catch(() => console.log("xxx"));
-
-          redirectToCheckout();
-        }}
         onMouseEnter={handleHover}
         onMouseLeave={handleMouseLeave}
         className={`absolute border w-3/4 h-[45px] bottom-4 rounded-lg overflow-hidden ${
@@ -144,7 +132,7 @@ function BuyBox() {
         <p className="absolute inset-0 flex items-center justify-center font-bold text-white">
           {loading ? "Loading..." : "Buy now!"}
         </p>
-      </button>
+      </Link>
     </div>
   );
 }

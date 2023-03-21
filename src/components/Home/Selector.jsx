@@ -8,11 +8,11 @@ const Selector = ({ selectedItem }) => {
   const [selected, setSelected] = useState("");
   const [open, setOpen] = useState(false);
   const reviewsData = [
-    { id: 1, title: "1 Google Review 5 stars" },
-    { id: 2, title: "5 Google Reviews 5 stars" },
-    { id: 3, title: "10 Google Reviews 5 stars" },
-    { id: 4, title: "15 Google Reviews 5 stars" },
-    { id: 5, title: "20 Google Reviews 5 stars" },
+    { id: 1, title: "1 Google Review 5 stars", price: "5$" },
+    { id: 2, title: "5 Google Reviews 5 stars", price: "20$" },
+    { id: 3, title: "10 Google Reviews 5 stars", price: "45$" },
+    { id: 4, title: "15 Google Reviews 5 stars", price: "70$" },
+    { id: 5, title: "20 Google Reviews 5 stars", price: "83.5$" },
   ];
 
   useEffect(() => {
@@ -43,13 +43,13 @@ const Selector = ({ selectedItem }) => {
       </div>
       <ul
         className={`bg-white rounded-xl mt-2 overflow-y-auto ${
-          open ? "border-purple-400 border-2 max-h-60" : "max-h-0"
+          open ? "border-purple-400 border-2 max-h-72" : "max-h-0"
         } `}
       >
         {countries.map((item) => (
           <li
             key={item?.title}
-            className={`p-2 text-sm transition duration-300 ease-in-out
+            className={`p-2 text-sm transition relative flex flex-row duration-300 ease-in-out
             hover:bg-purple-400 hover:text-white hover:shadow-md
             ${
               item?.title?.toLowerCase() === selected?.toLowerCase() &&
@@ -70,6 +70,9 @@ const Selector = ({ selectedItem }) => {
             }}
           >
             {item?.title}
+            <div className="w-full">
+              <p className="text-right">{item?.price}</p>
+            </div>
           </li>
         ))}
       </ul>

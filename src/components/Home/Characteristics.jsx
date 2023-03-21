@@ -1,24 +1,39 @@
 import React from "react";
+import {
+  FcAssistant,
+  FcConferenceCall,
+  FcRatings,
+  FcOk,
+  FcLock,
+  FcApproval,
+  FcCustomerSupport
+} from "react-icons/fc";
 
 function Characteristics() {
   const characteristics = [
     {
-      name: "Servicio de alta calidad",
+      name: "High-quality service",
+      icon: <FcAssistant size={50} />, // Servicio de alta calidad
     },
     {
-      name: "Reseñas reales, clientes satisfechos",
+      name: "Real reviews, satisfied customers",
+      icon: <FcConferenceCall size={50} />, // Servicio de alta calidad
     },
     {
-      name: "Servicios dirigidos",
+      name: "Targeted services",
+      icon: <FcRatings size={50} />, // Servicio de alta calidad
     },
     {
-      name: "Privacidad y seguridad",
+      name: "Privacy and security",
+      icon: <FcLock size={50} />, // Servicio de alta calidad
     },
     {
-      name: "30 días de garantía de devolución de dinero",
+      name: "30-day money-back guarantee",
+      icon: <FcOk size={50} />, // Servicio de alta calidad
     },
     {
-      name: "La satisfacción del cliente",
+      name: "Customer satisfaction",
+      icon: <FcCustomerSupport size={50} />, // Servicio de alta calidad
     },
   ];
 
@@ -31,6 +46,7 @@ function Characteristics() {
         {characteristics.map((item, i) => (
           <>
             <div className="flex border border-purple-400 flex-col h-[200px] w-[170px] text-gray-500 rounded-xl shadow-lg bg-white items-center justify-center hover:scale-105 hover:shadow-xl transition duration-300">
+              {item.icon}
               <p className="text-center font-semibold m-2">{item.name}</p>
             </div>
           </>
