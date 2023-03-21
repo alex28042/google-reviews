@@ -38,7 +38,7 @@ function Characteristics() {
   ];
 
   return (
-    <div className="flex flex-col mt-44 mb-44">
+    <div id="A" className="flex flex-col mt-44 mb-44">
       <h1 className="text-center font-bold text-3xl">
         Impressive advantages included with our services:
       </h1>

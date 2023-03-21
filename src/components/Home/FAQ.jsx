@@ -28,7 +28,8 @@ function FAQ() {
     },
   ];
   return (
-    <div className="flex flex-col items-center justify-center w-[1000px]">
+    <div id="B" className="flex flex-col items-center justify-center w-[1000px]">
+      <h1 className="text-4xl mt-20 mb-20 font-bold">Frequently Asked Questions</h1>
       {faq.map((item, i) => (
         <>
           <div className="h-[200px] border relative w-full mb-6 rounded-2xl border-purple-400">

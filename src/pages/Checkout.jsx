@@ -31,6 +31,14 @@ const items = [
   },
 ];
 
+const reviewsData = [
+  { id: 1, title: "1 Google Review 5 stars", price: "5$" },
+  { id: 2, title: "5 Google Reviews 5 stars", price: "20$" },
+  { id: 3, title: "10 Google Reviews 5 stars", price: "45$" },
+  { id: 4, title: "15 Google Reviews 5 stars", price: "70$" },
+  { id: 5, title: "20 Google Reviews 5 stars", price: "83.5$" },
+];
+
 const getStripe = () => {
   if (!stripePromise) {
     stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
@@ -111,6 +119,7 @@ function Checkout() {
           <h1 className="font-bold top-32 absolute text-4xl">
             Let's Get Started
           </h1>
+          <h2 className="mb-20 font-semibold text-xl text-purple-500">{reviewsData[id - 1].title}</h2>
           <input
             className="w-3/5 h-12 p-3 border-2 border-slate-400  rounded-lg"
             placeholder="john@example.com"

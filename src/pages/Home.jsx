@@ -12,7 +12,7 @@ function Home() {
     <div className="bg-white flex flex-wrap h-screen justify-center items-center">
       <Header />
       <div>
-        <h1 className="font-bold text-5xl text-center mb-3 mt-24">
+        <h1 className="font-bold text-5xl text-center mb-3 mt-32">
           Buy Google Reviews with
         </h1>
         <h1 className="font-bold text-5xl text-center mb-3 text-purple-400">

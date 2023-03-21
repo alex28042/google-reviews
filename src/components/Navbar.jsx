@@ -52,7 +52,12 @@ export default function Header() {
               <a class="mr-5  cursor-pointer text-gray-400 transition duration-500 ease-in-out hover:text-black font-semibold tr04">
                 Services
               </a>
-            </Link>  
+            </Link>
+            <Link to="B" smooth={true} duration={1000}>
+              <a class="mr-5  cursor-pointer text-gray-400 transition duration-500 ease-in-out hover:text-black font-semibold tr04">
+                FAQ
+              </a>
+            </Link>    
           </div>
           <a
             href="https://instagram.com/onlygrowthfans"
