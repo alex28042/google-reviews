@@ -28,22 +28,29 @@ function FAQ() {
     },
   ];
   return (
-    <div id="B" className="flex flex-col items-center justify-center w-[1000px]">
-      <h1 className="text-4xl mt-20 mb-20 font-bold">Frequently Asked Questions</h1>
-      {faq.map((item, i) => (
-        <>
-          <div className="h-[200px] border relative w-full mb-6 rounded-2xl border-purple-400">
-            <div className="rounded-t-2xl w-full absolute h-[60px] bg-purple-400">
-              <h1 className="font-bold text-xl text-center m-3">
-                {item.title}
-              </h1>
+    <div
+      id="B"
+      className="flex flex-col items-center justify-center w-[1000px]"
+    >
+      <h1 className="text-4xl mt-20 mb-20 font-bold">
+        Frequently Asked Questions
+      </h1>
+      <div className="pt-12 pb-24 max-w-4xl mx-auto fsac4 md:px-1 px-3">
+        {faq.map((item, i) => (
+          <>
+            <div className="p-0.5 rounded-xl bg-gradient-to-tl from-purple-400 to-pink-600">
+              <div class="ktq4 h-full">
+                <h3 class="pt-3 font-bold text-lg text-black">
+                  {item.title}
+                </h3>
+                <p class="pt-2 value-text text-md text-gray-600 fkrr1">
+                  {item.desc}
+                </p>
+              </div>
             </div>
-            <div>
-              <p className="m-4 mt-[66px]">{item.desc}</p>
-            </div>
-          </div>
-        </>
-      ))}
+          </>
+        ))}
+      </div>
     </div>
   );
 }

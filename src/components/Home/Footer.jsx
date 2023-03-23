@@ -7,7 +7,7 @@ export default function Footer() {
             <li>
               <a
                 href="/"
-                className="text-md text-black hover:text-white transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
+                className="text-md text-gray-500 hover:text-black transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
               >
                 Terms of Service
               </a>
@@ -15,7 +15,7 @@ export default function Footer() {
             <li>
               <a
                 href="/"
-                className="text-md text-black hover:text-white transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
+                className="text-md text-gray-500 hover:text-black transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
               >
                 Privacy Policy
               </a>
@@ -23,7 +23,7 @@ export default function Footer() {
             <li>
               <a
                 href="/"
-                className="text-md text-black hover:text-white transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
+                className="text-md text-gray-500 hover:text-black transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
               >
                 Ad Choices
               </a>
@@ -31,7 +31,7 @@ export default function Footer() {
             <li>
               <a
                 href="/"
-                className="text-md text-black hover:text-white transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
+                className="text-md text-gray-500 hover:text-black transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
               >
                 Cookie Policy
               </a>
@@ -39,7 +39,7 @@ export default function Footer() {
             <li>
               <a
                 href="/"
-                className="text-md text-black hover:text-white transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
+                className="text-md text-gray-500 hover:text-black transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
               >
                 Partners
               </a>

@@ -10,8 +10,10 @@ function Order() {
   const [loading, setLoading] = useState(false);
   const [errorBuy, setErrorBuy] = useState(false);
   const [emailExists, setEmailExists] = useState(false);
+  const [emailDoesntExists, setEmailDoesntExists] = useState(false);
 
   useEffect(() => {
+    setEmailDoesntExists(false);
     setEmailExists(false);
     setTimeout(() => {
       setErrorBuy(false);
@@ -45,24 +47,27 @@ function Order() {
           />
           <button
             disabled={loading}
-            onClick={() => {
+            onClick={async () => {
+              setLoading(true)
               if (emailRegex({ exact: true }).test(email)) {
-                db()
+                await db()
                   .collection("Users")
-                  .where(email, "==", "email")
+                  .where("email", "==", email)
                   .get()
-                  .then((q) =>
-                    q.forEach((d) => {
-                      const data = d.data();
-                      console.log(data);
-                      data.email === email
-                        ? setEmailExists(true)
-                        : setEmailExists(false);
-                    })
-                  );
+                  .then((q) => {
+                    if (q.size !== 0) {
+                      q.forEach((d) => {
+                        const data = d.data();
+                        data.email === email
+                          ? setEmailExists(true)
+                          : setEmailExists(false);
+                      });
+                    } else setEmailDoesntExists(true);
+                  });
               } else {
                 setErrorBuy(true);
               }
+              setLoading(false)
             }}
             onMouseEnter={handleHover}
             onMouseLeave={handleMouseLeave}
@@ -96,6 +101,15 @@ function Order() {
             <>
               <p className="absolute bottom-32 left-0 right-0 mx-auto text-center text-green-400 font-bold animate-bounce animate-fade-out">
                 Your order will be delivered before 24h since you have made it
+              </p>
+            </>
+          ) : (
+            <></>
+          )}
+          {emailDoesntExists ? (
+            <>
+              <p className="absolute bottom-32 left-0 right-0 mx-auto text-center text-green-400 font-bold animate-bounce animate-fade-out">
+                {email + " is not linked for any order"}
               </p>
             </>
           ) : (
