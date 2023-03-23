@@ -1,6 +1,7 @@
 import React from "react";
+import { Link as LinkDom } from "react-router-dom";
 import { Link } from "react-scroll";
-import "../index.css"
+import "../index.css";
 
 export default function Header() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -57,7 +58,12 @@ export default function Header() {
               <a class="mr-5  cursor-pointer text-gray-400 transition duration-500 ease-in-out hover:text-black font-semibold tr04">
                 FAQ
               </a>
-            </Link>    
+            </Link>
+            <LinkDom to={"/checkorder"}>
+              <a class="mr-5  cursor-pointer text-gray-400 transition duration-500 ease-in-out hover:text-black font-semibold tr04">
+                Check order
+              </a>
+            </LinkDom>
           </div>
           <a
             href="https://instagram.com/onlygrowthfans"

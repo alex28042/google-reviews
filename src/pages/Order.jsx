@@ -48,6 +48,7 @@ function Order() {
               if (emailRegex({ exact: true }).test(email)) {
                 db()
                   .collection("Users")
+                  .where(email, "==", "email")
                   .get()
                   .then((q) =>
                     q.forEach((d) => {
@@ -58,6 +59,7 @@ function Order() {
                     })
                   );
               } else {
+                
               }
             }}
             onMouseEnter={handleHover}
