@@ -22,7 +22,7 @@ function Home() {
           We offer only the highest quality services. Buy safely and securely
           below:
         </h2>
-        <div className="flex flex-row">
+        <div className="flex md:flex-row flex-col items-center">
           <BuyBox />
           <BenefitsBuy />
         </div>

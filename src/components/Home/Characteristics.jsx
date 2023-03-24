@@ -6,7 +6,7 @@ import {
   FcOk,
   FcLock,
   FcApproval,
-  FcCustomerSupport
+  FcCustomerSupport,
 } from "react-icons/fc";
 
 function Characteristics() {
@@ -39,10 +39,10 @@ function Characteristics() {
 
   return (
     <div id="A" className="flex flex-col mt-44 mb-44">
-      <h1 className="text-center font-bold text-3xl">
+      <h1 className="text-center font-bold md:text-3xl text-2xl">
         Impressive advantages included with our services:
       </h1>
-      <div className="flex mt-10 flex-row  items-center justify-between">
+      <div className="grid grid-cols-2  gap-2 md:flex mt-10 md:flex-row md:ml-0 ml-52  items-center justify-between">
         {characteristics.map((item, i) => (
           <>
             <div className="flex border border-purple-400 flex-col h-[200px] w-[170px] text-gray-500 rounded-xl shadow-lg bg-white items-center justify-center hover:scale-105 hover:shadow-xl transition duration-300">

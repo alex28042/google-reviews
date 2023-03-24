@@ -37,7 +37,7 @@ function Order() {
       <Header />
       <div className="flex flex-col h-full w-full items-center mt-32">
         <div className="w-3/5 h-2/3 border rounded-xl shadow-xl border-purple-400 relative flex flex-col items-center justify-center">
-          <h1 className="font-bold top-32 absolute text-4xl">
+          <h1 className="font-bold top-32 absolute text-center md:text-4xl text-2xl">
             Let's Check Your Order
           </h1>
           <input
