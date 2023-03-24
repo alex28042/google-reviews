@@ -62,7 +62,10 @@ function Order() {
                           ? setEmailExists(true)
                           : setEmailExists(false);
                       });
-                    } else setEmailDoesntExists(true);
+                    } else {
+                      setErrorBuy(false)
+                      setEmailDoesntExists(true);
+                    } 
                   });
               } else {
                 setErrorBuy(true);
@@ -108,7 +111,7 @@ function Order() {
           )}
           {emailDoesntExists ? (
             <>
-              <p className="absolute bottom-32 left-0 right-0 mx-auto text-center text-green-400 font-bold animate-bounce animate-fade-out">
+              <p className="absolute bottom-32 left-0 right-0 mx-auto text-center text-red-400 font-bold animate-bounce animate-fade-out">
                 {email + " is not linked for any order"}
               </p>
             </>
