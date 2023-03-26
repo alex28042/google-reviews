@@ -116,7 +116,7 @@ function Checkout() {
       <Header />
       <div className="flex flex-col h-full w-full items-center mt-32">
         <div className="w-5/6 md:w-3/5 h-2/3 border rounded-xl shadow-xl border-purple-400 relative flex flex-col items-center justify-center">
-          <h1 className="font-bold top-32 absolute text-4xl">
+          <h1 className="font-bold top-16 sm:top-32 absolute text-4xl">
             Let's Get Started
           </h1>
           <h2 className="mb-20 font-semibold text-xl text-purple-500">{reviewsData[id - 1].title}</h2>
