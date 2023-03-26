@@ -30,7 +30,7 @@ function FAQ() {
   return (
     <div
       id="B"
-      className="flex flex-col items-center justify-center w-[1000px]"
+      className="flex flex-col items-center justify-center"
     >
       <h1 className="text-4xl mt-20 mb-20 font-bold">
         Frequently Asked Questions
