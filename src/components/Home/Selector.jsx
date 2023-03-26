@@ -17,7 +17,7 @@ const Selector = ({ selectedItem }) => {
 
   useEffect(() => {
     setCountries(reviewsData);
-    setSelected(reviewsData[0].title);
+    setSelected(reviewsData[0].title + " - " + reviewsData[0].price);
     selectedItem(reviewsData[0].id);
   }, []);
 
@@ -30,7 +30,7 @@ const Selector = ({ selectedItem }) => {
         }`}
       >
         {selected
-          ? selected?.length > 25
+          ? selected?.length > 35
             ? selected?.substring(0, 25) + "..."
             : selected
           : "Select Google Review"}
@@ -62,7 +62,7 @@ const Selector = ({ selectedItem }) => {
             }`}
             onClick={() => {
               if (item?.title?.toLowerCase() !== selected.toLowerCase()) {
-                setSelected(item?.title);
+                setSelected(item?.title + " - " + item.price);
                 selectedItem(item?.id);
                 setOpen(false);
                 setInputValue("");
