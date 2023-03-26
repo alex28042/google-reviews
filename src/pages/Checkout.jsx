@@ -115,18 +115,18 @@ function Checkout() {
     <div className="bg-white flex flex-wrap h-screen justify-center items-center">
       <Header />
       <div className="flex flex-col h-full w-full items-center mt-32">
-        <div className="w-3/5 h-2/3 border rounded-xl shadow-xl border-purple-400 relative flex flex-col items-center justify-center">
+        <div className="w-5/6 md:w-3/5 h-2/3 border rounded-xl shadow-xl border-purple-400 relative flex flex-col items-center justify-center">
           <h1 className="font-bold top-32 absolute text-4xl">
             Let's Get Started
           </h1>
           <h2 className="mb-20 font-semibold text-xl text-purple-500">{reviewsData[id - 1].title}</h2>
           <input
-            className="w-3/5 h-12 p-3 border-2 border-slate-400  rounded-lg"
+            className="w-4/5 md:w-3/5 h-12 p-3 border-2 border-slate-400  rounded-lg"
             placeholder="john@example.com"
             onChange={(text) => setEmail(text.target.value)}
           />
           <input
-            className="w-3/5 h-12 p-3 mt-5 border-2 border-slate-400  rounded-lg"
+            className="w-4/5 md:w-3/5 h-12 p-3 mt-5 border-2 border-slate-400  rounded-lg"
             placeholder="https://www.google.com/maps/place/Acrobatic+Adventure+Park/@43.2712256,6.5420162,14z/data=!4m6!3m5!1s0x12cec999ef969e93:0xc5f6a42ebee3051b!8m2!3d43.2712254!4d6.5524271!16s%2Fg%2F11g1ls4x2_"
             onChange={(text) => setCompanyUrl(text.target.value)}
           />

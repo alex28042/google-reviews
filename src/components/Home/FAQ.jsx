@@ -32,7 +32,7 @@ function FAQ() {
       id="B"
       className="flex flex-col items-center justify-center"
     >
-      <h1 className="text-4xl mt-20 mb-20 font-bold">
+      <h1 className="text-4xl mt-20 mb-20 text-center font-bold">
         Frequently Asked Questions
       </h1>
       <div className="pt-12 pb-24 max-w-4xl mx-auto fsac4 md:px-1 px-3">

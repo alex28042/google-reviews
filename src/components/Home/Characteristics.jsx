@@ -42,7 +42,7 @@ function Characteristics() {
       <h1 className="text-center font-bold md:text-3xl text-2xl">
         Impressive advantages included with our services:
       </h1>
-      <div className="grid grid-cols-2  gap-2 md:flex mt-10 md:flex-row sm:ml-32 md:ml-0 ml-16  items-center justify-between">
+      <div className="grid grid-cols-2  gap-2 md:flex mt-10 md:flex-row sm:ml-32 md:ml-0 ml-5  items-center justify-between">
         {characteristics.map((item, i) => (
           <>
             <div className="flex border border-purple-400 flex-col h-[200px] w-[170px] text-gray-500 rounded-xl shadow-lg bg-white items-center justify-center hover:scale-105 hover:shadow-xl transition duration-300">
