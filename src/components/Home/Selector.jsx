@@ -12,7 +12,7 @@ const Selector = ({ selectedItem }) => {
     { id: 2, title: "5 Google Reviews 5 stars", price: "20$" },
     { id: 3, title: "10 Google Reviews 5 stars", price: "45$" },
     { id: 4, title: "15 Google Reviews 5 stars", price: "70$" },
-    { id: 5, title: "20 Google Reviews 5 stars", price: "83.5$" },
+    { id: 5, title: "20 Google Reviews 5 stars", price: "87.5$" },
   ];
 
   useEffect(() => {

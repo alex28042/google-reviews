@@ -8,28 +8,30 @@ import emailRegex from "email-regex";
 
 let stripePromise;
 
+
 const items = [
   {
-    price: "price_1Mm45pKEbbYpdkJ1io1yZ5tT",
+    price: "price_1MqHUwKEbbYpdkJ1typ3Szt8",
     quantity: 1,
   },
   {
-    price: "price_1MmR4EKEbbYpdkJ1dMQyEKhj",
+    price: "price_1MqHUsKEbbYpdkJ1S99mxTNe",
     quantity: 1,
   },
   {
-    price: "price_1MmR4dKEbbYpdkJ177QDrgsJ",
+    price: "price_1MqHUpKEbbYpdkJ1evPVsaUE",
     quantity: 1,
   },
   {
-    price: "price_1MmR56KEbbYpdkJ1aZBfCFKX",
+    price: "price_1MqHUOKEbbYpdkJ1Z5wZtOTd",
     quantity: 1,
   },
   {
-    price: "price_1MmR5dKEbbYpdkJ1rkt0FoCS",
+    price: "price_1MqHUkKEbbYpdkJ1wpXDfcNu",
     quantity: 1,
   },
 ];
+
 
 const reviewsData = [
   { id: 1, title: "1 Google Review 5 stars", price: "5$" },
@@ -41,7 +43,7 @@ const reviewsData = [
 
 const getStripe = () => {
   if (!stripePromise) {
-    stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
+    stripePromise = loadStripe("pk_live_51LiOtxKEbbYpdkJ1URv5VyavEbYpFF2eL4q2lkBNpEzuMVAB4hMvHg1bQqJnqa3ow3b5qKAMbpRbB7EUE4w1r8wg00HvuItIsH");
   }
 
   return stripePromise;
