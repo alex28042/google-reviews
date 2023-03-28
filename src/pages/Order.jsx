@@ -103,7 +103,7 @@ function Order() {
           {emailExists ? (
             <>
               <p className="absolute bottom-32 left-0 right-0 mx-auto text-center text-green-400 font-bold animate-bounce animate-fade-out">
-                Your order will be delivered before 24h since you have made it
+                Your order will be delivered between 24h and 1 week since you have made the order
               </p>
             </>
           ) : (
