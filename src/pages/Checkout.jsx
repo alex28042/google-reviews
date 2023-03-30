@@ -3,11 +3,10 @@ import Header from "../components/Navbar";
 import CheckoutImage from "../assets/CheckoutImage.png";
 import { loadStripe } from "@stripe/stripe-js";
 import { db } from "../firebaseconfig";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import emailRegex from "email-regex";
 
 let stripePromise;
-
 
 const items = [
   {
@@ -32,7 +31,6 @@ const items = [
   },
 ];
 
-
 const reviewsData = [
   { id: 1, title: "1 Google Review 5 stars", price: "5$" },
   { id: 2, title: "5 Google Reviews 5 stars", price: "20$" },
@@ -43,7 +41,9 @@ const reviewsData = [
 
 const getStripe = () => {
   if (!stripePromise) {
-    stripePromise = loadStripe("pk_live_51LiOtxKEbbYpdkJ1URv5VyavEbYpFF2eL4q2lkBNpEzuMVAB4hMvHg1bQqJnqa3ow3b5qKAMbpRbB7EUE4w1r8wg00HvuItIsH");
+    stripePromise = loadStripe(
+      "pk_live_51LiOtxKEbbYpdkJ1URv5VyavEbYpFF2eL4q2lkBNpEzuMVAB4hMvHg1bQqJnqa3ow3b5qKAMbpRbB7EUE4w1r8wg00HvuItIsH"
+    );
   }
 
   return stripePromise;
@@ -57,8 +57,10 @@ function Checkout() {
   const [loading, setLoading] = useState(false);
   const [selcectedItem, setSelcectedItem] = useState(1);
   const [errorBuy, setErrorBuy] = useState(false);
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
   const { id } = useParams();
 
+  console.log(acceptedTerms);
   useLayoutEffect(() => {
     if (id <= items.length && id >= 1) {
       setSelcectedItem(id);
@@ -89,6 +91,7 @@ function Checkout() {
       .add({
         email: email,
         companyURL: companyURL,
+        acceptedTerms: true,
       })
       .then(() => console.log("holaa"))
       .catch(() => console.log("xxx"));
@@ -121,7 +124,9 @@ function Checkout() {
           <h1 className="font-bold top-16 sm:top-32 absolute text-4xl">
             Let's Get Started
           </h1>
-          <h2 className="mb-20 font-semibold text-xl text-purple-500">{reviewsData[id - 1].title}</h2>
+          <h2 className="mb-20 font-semibold text-xl text-purple-500">
+            {reviewsData[id - 1].title}
+          </h2>
           <input
             className="w-4/5 md:w-3/5 h-12 p-3 border-2 border-slate-400  rounded-lg"
             placeholder="john@example.com"
@@ -132,10 +137,35 @@ function Checkout() {
             placeholder="https://www.google.com/maps/place/Acrobatic+Adventure+Park/@43.2712256,6.5420162,14z/data=!4m6!3m5!1s0x12cec999ef969e93:0xc5f6a42ebee3051b!8m2!3d43.2712254!4d6.5524271!16s%2Fg%2F11g1ls4x2_"
             onChange={(text) => setCompanyUrl(text.target.value)}
           />
+          <div className="flex flex-row mt-8">
+            <input
+              type="checkbox"
+              id="acceptTerms"
+              name="acceptTerms"
+              className="mr-2"
+              onChange={(label) => setAcceptedTerms(label.target.checked)}
+            />
+            <label htmlFor="acceptTerms">
+              I accept the{" "}
+              <Link
+                to={"/termsservice"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Terms of Service
+              </Link>{" "}
+              and{" "}
+              <Link to="/privacy" target="_blank" rel="noopener noreferrer">
+                Privacy Policy
+              </Link>
+            </label>
+          </div>
+
           <button
             disabled={loading}
             onClick={async () => {
               if (
+                acceptedTerms !== false &&
                 emailRegex({ exact: true }).test(email) &&
                 companyUrl !== ""
               ) {
