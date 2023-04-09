@@ -12,12 +12,12 @@ export default function Header() {
     <header class="fixed top-0 w-full clearNav z-50">
       <div class="max-w-5xl mx-auto flex flex-wrap p-5 flex-col md:flex-row">
         <div className="flex flex-row items-center justify-between p-3 md:p-1">
-          <a
-            href="/"
+          <LinkDom
+            to="/"
             class="flex text-3xl font-medium mb-4 md:mb-0 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
           >
-            Buy Reviews
-          </a>
+            Business Growth
+          </LinkDom>
           <button
             className="text-white pb-4 cursor-pointer leading-none px-3 py-1 md:hidden outline-none focus:outline-none content-end ml-auto"
             type="button"

@@ -107,13 +107,10 @@ function Checkout() {
   };
 
   const redirectToCheckout = async () => {
-    console.log("redirect");
-
     const stripe = await getStripe();
     const { error } = await stripe.redirectToCheckout(checkoutOptions);
 
     setLoading(false);
-    console.log(error);
   };
 
   return (
@@ -165,18 +162,19 @@ function Checkout() {
             disabled={loading}
             onClick={async () => {
               if (
-                acceptedTerms !== false &&
-                emailRegex({ exact: true }).test(email) &&
-                companyUrl !== ""
+                acceptedTerms === false ||
+                !emailRegex({ exact: true }).test(email) ||
+                companyUrl === ""
               ) {
-                setLoading(true);
-
-                await addEmailAndCompanyToDatabase(email, companyUrl);
-
-                redirectToCheckout();
-              } else {
                 setErrorBuy(true);
+                return;
               }
+
+              setLoading(true);
+
+              await addEmailAndCompanyToDatabase(email, companyUrl);
+
+              redirectToCheckout();
             }}
             onMouseEnter={handleHover}
             onMouseLeave={handleMouseLeave}
@@ -200,7 +198,7 @@ function Checkout() {
           {errorBuy ? (
             <>
               <p className="absolute bottom-32 left-0 right-0 mx-auto text-center text-red-400 font-bold animate-bounce animate-fade-out">
-                Please introduce correctly the email and url
+                Please introduce correctly the email or url or accept terms
               </p>
             </>
           ) : (

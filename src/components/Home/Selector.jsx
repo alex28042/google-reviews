@@ -9,7 +9,7 @@ const Selector = ({ selectedItem }) => {
   const [open, setOpen] = useState(false);
   const reviewsData = [
     { id: 1, title: "1 Google Review 5 stars", price: "5$" },
-    { id: 2, title: "5 Google Reviews 5 stars", price: "20$" },
+    { id: 2, title: "5 Google Reviews 5 stars", price: "23$" },
     { id: 3, title: "10 Google Reviews 5 stars", price: "45$" },
     { id: 4, title: "15 Google Reviews 5 stars", price: "70$" },
     { id: 5, title: "20 Google Reviews 5 stars", price: "87.5$" },
