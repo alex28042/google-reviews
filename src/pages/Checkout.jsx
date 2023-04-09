@@ -109,6 +109,8 @@ function Checkout() {
   const redirectToCheckout = async () => {
     const stripe = await getStripe();
     const { error } = await stripe.redirectToCheckout(checkoutOptions);
+    
+    console.log(error);
 
     setLoading(false);
   };
