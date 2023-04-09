@@ -11,7 +11,9 @@ function TermsService() {
             Terms of Service
           </h1>
           <div className="mt m-6">
-            <h2 className="font-bold text-lg">1. Acceptance of Terms of Service</h2>
+            <h2 className="font-bold text-lg">
+              1. Acceptance of Terms of Service
+            </h2>
             <p>
               By using our website and services, you agree to comply with these
               Terms of Service. If you do not agree with these terms, do not use
@@ -46,7 +48,9 @@ function TermsService() {
               are not responsible for any legal, criminal, or administrative
               action that may result from the purchase of our reviews.
             </p>
-            <h2 className="font-bold text-lg">7. Changes to Terms of Service</h2>
+            <h2 className="font-bold text-lg">
+              7. Changes to Terms of Service
+            </h2>
             <p>
               We reserve the right to modify these Terms of Service at any time.
               Changes will take effect immediately upon posting on our website.
@@ -56,7 +60,9 @@ function TermsService() {
               We reserve the right to suspend or terminate your access to our
               services at any time, for any reason, without notice.
             </p>
-            <h2 className="font-bold text-lg">9. Applicable Law and Jurisdiction</h2>
+            <h2 className="font-bold text-lg">
+              9. Applicable Law and Jurisdiction
+            </h2>
             <p>
               These Terms of Service shall be governed and interpreted in
               accordance with the laws of the country in which our company is
@@ -81,7 +87,7 @@ function TermsService() {
         </div>
 
         <h2 className="font-bold mt-5 text-lg">
-          Contact Us: alex28042@gmail.com
+          Contact Us: businessgrowthofficial@outlook.com
         </h2>
       </div>
     </div>

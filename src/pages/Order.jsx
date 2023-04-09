@@ -120,7 +120,7 @@ function Order() {
           )}
         </div>
         <h2 className="font-bold mt-5 text-lg">
-          Contact Us: alex28042@gmail.com
+          Contact Us: businessgrowthofficial@outlook.com
         </h2>
       </div>
     </div>
